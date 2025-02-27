@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: '14'  # Specify the Node.js version
 
+      - name: Install jetify globally
+        run: npm install -g jetifier
+
       - name: Install dependencies
         run: |
           npm install

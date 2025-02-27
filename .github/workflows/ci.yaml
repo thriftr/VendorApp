@@ -103,7 +103,7 @@ jobs:
           ./gradlew assembleRelease
 
   ios-build:
-    runs-on: macos-latest
+    runs-on: macos-latest  # macOS runner for iOS builds
     needs: install
     steps:
       - name: Checkout code
@@ -113,6 +113,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
+
+      - name: Install CocoaPods
+        run: |
+          sudo gem install cocoapods  # Install CocoaPods on macOS runner
 
       - name: Install dependencies
         run: |
